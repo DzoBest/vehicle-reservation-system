@@ -35,26 +35,33 @@ export default function Register() {
         lastName: form.lastName,
         email: form.email,
         password: form.password,
-        passwordConfirmation: form.passwordConfirmation // Crucial: Backend validator requires this
+        passwordConfirmation: form.passwordConfirmation 
       })
 
       // Option 1 : connexion automatique après inscription
       if (res.data.token) {
         const token = res.data.token.value || res.data.token.token || res.data.token
-        // Ensure user structure matches what login expects if partial
+        // verification de la structure de l'utilisateur
         login(res.data.user, token)
         navigate('/')
       } else {
-        // Option 2 : redirection vers login
+    
         navigate('/login')
       }
     } catch (err: any) {
       console.error(err)
-      setError(
-        err.response?.data?.message ||
-        (err.response?.data?.messages ? JSON.stringify(err.response.data.messages) : null) ||
-        (err.response?.data?.errors ? err.response.data.errors[0].message : 'Erreur lors de l\'inscription')
-      )
+
+      let errorMsg = 'Erreur lors de l\'inscription';
+
+      if (err.response?.data?.messages) {
+        errorMsg = err.response.data.messages[0].message;
+      } else if (err.response?.data?.message) {
+        errorMsg = err.response.data.message;
+      } else if (err.response?.data?.errors) {
+        errorMsg = err.response.data.errors[0].message;
+      }
+
+      setError(errorMsg)
       setLoading(false)
     }
   }
@@ -104,6 +111,7 @@ export default function Register() {
                 className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition outline-none"
                 value={form.firstName}
                 onChange={(e) => setForm({ ...form, firstName: e.target.value })}
+                required
               />
             </div>
             <div>
@@ -114,6 +122,7 @@ export default function Register() {
                 className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition outline-none"
                 value={form.lastName}
                 onChange={(e) => setForm({ ...form, lastName: e.target.value })}
+                required
               />
             </div>
           </div>

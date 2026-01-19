@@ -26,7 +26,13 @@ export default class AuthController {
           lastname: user.lastName,
         },
       })
-    } catch (error) {
+    } catch (error: any) {
+      if (error.messages) {
+        return response.status(422).json({
+          message: 'Erreur de validation',
+          messages: error.messages,
+        })
+      }
       return response.status(400).json({
         message: error.message ?? "Erreur lors de l'inscription",
       })
