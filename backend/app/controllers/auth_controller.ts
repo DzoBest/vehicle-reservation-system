@@ -49,26 +49,26 @@ export default class AuthController {
       const user = await User.findBy('email', email.toLowerCase())
 
       if (!user) {
-        return response.unauthorized({ message: 'Invalid credentials' })
+        return response.status(404).json({ message: 'Aucun compte associé à cet email' })
       }
 
       const isPasswordValid = await hash.verify(user.password, password)
 
       if (!isPasswordValid) {
-        return response.unauthorized({ message: 'Invalid credentials' })
+        return response.status(401).json({ message: 'Mot de passe incorrect' })
       }
 
       // Générer le token (DB Access Token)
       const token = await User.accessTokens.create(user)
 
-      return response.ok({
-        message: 'Login successful',
+      return response.status(200).json({
+        message: 'Connexion réussie',
         token: token,
         expiresAt: token.expiresAt,
         user: user.serializePublic ? user.serializePublic() : user,
       })
     } catch {
-      return response.unauthorized({ message: 'Invalid credentials' })
+      return response.status(400).json({ message: 'Données invalides' })
     }
   }
 

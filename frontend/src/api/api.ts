@@ -23,8 +23,9 @@ api.interceptors.request.use((config) => {
 api.interceptors.response.use(
   (response) => response,
   (error) => {
-    if (error.response && error.response.status === 401) {
-      // Token invalide ou expiré, déconnexion de l'utilisateur
+    // Ne pas rediriger si l'erreur 401 vient de la tentative de connexion elle-même
+    if (error.response && error.response.status === 401 && !error.config.url?.includes('/auth/login')) {
+      // Token invalide ou expiré (sur une autre route), déconnexion
       localStorage.removeItem('token')
       localStorage.removeItem('user')
       window.location.href = '/login'

@@ -25,9 +25,7 @@ export default function Login() {
     }
   }
 
-  const handleKeyPress = (e: React.KeyboardEvent) => {
-    if (e.key === 'Enter') submit()
-  }
+  /* handleKeyPress removed */
 
   return (
     <div className="min-h-screen w-full flex items-center justify-center bg-gradient-to-br from-emerald-50 via-white to-amber-50 relative">
@@ -71,7 +69,6 @@ export default function Login() {
               placeholder="jean.dupont@exemple.com"
               value={form.email}
               onChange={(e) => setForm({ ...form, email: e.target.value })}
-              onKeyPress={handleKeyPress}
               className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition outline-none"
               required
             />
@@ -84,7 +81,6 @@ export default function Login() {
               placeholder="••••••••"
               value={form.password}
               onChange={(e) => setForm({ ...form, password: e.target.value })}
-              onKeyPress={handleKeyPress}
               className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition outline-none"
               required
             />
