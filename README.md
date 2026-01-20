@@ -14,11 +14,11 @@ Bienvenue sur le projet **Data Lab Parking**, une application web moderne et sé
 
 ## Aperçu de l'Application
 
-### Tableau de Bord
-![Tableau de Bord](screenshots/dashboard.jpeg)
-
 ### Inscription
 ![Page d'inscription](screenshots/page_inscription.jpeg)
+
+### Tableau de Bord
+![Tableau de Bord](screenshots/dashboard.jpeg)
 
 ---
 
