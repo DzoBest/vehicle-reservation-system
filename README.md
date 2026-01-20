@@ -1,8 +1,8 @@
-# 🚗 Data Lab Parking - Gestion de Réservations de Véhicules
+# Data Lab Parking - Gestion de Réservations de Véhicules
 
 Bienvenue sur le projet **Data Lab Parking**, une application web moderne et sécurisée permettant aux employés de gérer la réservation des véhicules de service.
 
-## 📋 Fonctionnalités Principales
+## Fonctionnalités Principales
 
 - **Authentification Sécurisée** : Inscription et connexion avec validation stricte des données.
 - **Tableau de Bord Intuitif** : Vue d'ensemble des véhicules disponibles et des réservations de l'utilisateur.
@@ -12,7 +12,7 @@ Bienvenue sur le projet **Data Lab Parking**, une application web moderne et sé
 
 ---
 
-## 🔒 Sécurité (Points Forts)
+## Sécurité (Points Forts)
 
 La sécurité a été placée au cœur du développement de cette application :
 
@@ -36,7 +36,7 @@ La sécurité a été placée au cœur du développement de cette application :
 
 ---
 
-## 🛠️ Stack Technique
+## Stack Technique
 
 *   **Backend** : AdonisJS (Node.js framework)
 *   **Frontend** : React + TypeScript + Vignette
@@ -45,7 +45,7 @@ La sécurité a été placée au cœur du développement de cette application :
 
 ---
 
-## 💾 Reconstruction de la Base de Données (Pour le Jury)
+## Reconstruction de la Base de Données (Pour le Jury)
 
 Une sauvegarde complète de la base de données a été générée et placée dans le dossier `database`. Voici comment la restaurer pour tester l'application avec les données de démo.
 
@@ -77,7 +77,7 @@ Une sauvegarde complète de la base de données a été générée et placée da
 
 ---
 
-## 🚀 Installation & Lancement
+## Installation & Lancement
 
 1.  **Backend** :
     ```bash
@@ -95,6 +95,3 @@ Une sauvegarde complète de la base de données a été générée et placée da
     ```
 
 L'application sera accessible sur `http://localhost:5173` (ou le port indiqué par Vite).
-
----
-*Projet réalisé pour l'évaluation Data Lab.*
