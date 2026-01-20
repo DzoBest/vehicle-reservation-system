@@ -55,7 +55,7 @@ Une sauvegarde complète de la base de données a été générée et placée da
 
 ### Étapes de Restauration
 
-1.  **Localiser le fichier** : Assurez-vous d'avoir le fichier `database.sql` dans le dossier `database` du projet.
+1.  **Localiser le fichier** : Assurez-vous d'avoir le fichier `reservation_db.sql` dans le dossier `database` du projet.
 
 2.  **Créer la base de données (si elle n'existe pas)** :
     ```bash
@@ -67,12 +67,12 @@ Une sauvegarde complète de la base de données a été générée et placée da
     Exécutez la commande suivante depuis la racine du projet pour injecter la structure et les données :
 
     ```bash
-    psql -U postgres -d vehicle_reservation_db < database/database.sql
+    psql -U postgres -d vehicle_reservation_db < database/reservation_db.sql
     ```
 
     *Note : Si vous êtes sous Windows et que la commande `<` ne fonctionne pas en PowerShell, utilisez l'invite de commande classique (cmd.exe) ou la commande suivante :*
     ```powershell
-    cmd /c "psql -U postgres -d vehicle_reservation_db < database/database.sql"
+    cmd /c "psql -U postgres -d vehicle_reservation_db < database/reservation_db.sql"
     ```
 
 ---
