@@ -45,7 +45,7 @@ La sécurité a été placée au cœur du développement de cette application :
 
 ---
 
-## Reconstruction de la Base de Données (Pour le Jury)
+## Reconstruction de la Base de Données
 
 Une sauvegarde complète de la base de données a été générée et placée dans le dossier `database`. Voici comment la restaurer pour tester l'application avec les données de démo.
 
